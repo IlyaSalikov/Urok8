@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Post = (props) => {
-    // console.log(props);
-    
+
     return (
+
         <div className={"post"}>
             <div className={"post__content"}>
                 <strong>{props.name}{props.post.id}. {props.post.title}</strong>
