@@ -1,19 +1,17 @@
 import React from 'react';
+import Post from "./Post";
 
-// const posts = [
-//     {id: 1, title: 'JavaScript', body: 'Язык программирования'},
-//     {id: 2, title: 'PHP', body: 'Язык программирования для бэкенда'},
-//     {id: 3, title: 'Assembler', body: 'Низкоуровневый ЯП'}
-// ]
-
-function PostList() {
+const PostList = (props) => {
+    const posts = props.posts;
+    const list = posts.map(post =>
+        <li>
+            <Post post={post} key={post.id}/>
+        </li>
+    );
     return (
-        <>
-            <PostList post={{ id: 1, title: 'JavaScript', body: 'Язык программирования'}}/>
-            <PostList post={{ id: 2, title: 'PHP', body: 'Язык программирования для бэкенда'}}/>
-            <PostList post={{id: 3, title: 'Assembler', body: 'Низкоуровневый ЯП'}}/>
-        </>
-    )
-}
-
+        <ul className="postList">
+            {list}
+        </ul>
+    );
+};
 export default PostList;
